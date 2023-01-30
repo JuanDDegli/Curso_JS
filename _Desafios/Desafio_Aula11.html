@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifiicando</title>
+    <style>
+        
+        body{
+            background-color: rgb(58, 114, 236) ;
+        }
+
+       h1{
+            font:normal 23pt Arial;
+            color: rgb(253, 253, 253);
+        }
+        h2{
+            font: 15pt Arial;
+            color:rgb(253, 253, 253);
+        }
+        div#res{
+            font: 15pt Arial;
+            color:rgb(253, 253, 253);
+        }
+        
+    </style>
+</head>
+<body>
+    <h1><strong>Teste de Nacionalidade</strong> </h1>
+    <h2>Onde você vive?</h2> <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="Verificar()">
+    <div id="res">
+
+    </div>
+    
+
+    <script>
+        function Verificar(){
+        var txtp = document.getElementById('txtpais')
+        var pais = (txtp.value)
+        var up = pais.toUpperCase()
+        var res = document.querySelector('div#res')
+        res.innerHTML = `<p>Você nasceu em <strong>${up}</strong><p>`
+        if (up == "BRASIL"){
+            res.innerHTML += 'Você é <strong>Brasileiro!</strong>'
+        } else{
+            res.innerHTML += 'Você é <strong>Estrangeiro!</strong>'
+        }
+    }
+    </script>
+</body>
+</html>
